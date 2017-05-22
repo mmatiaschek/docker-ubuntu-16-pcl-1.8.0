@@ -16,10 +16,10 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
       && rm -rf /var/lib/apt/lists/*
 
 RUN \
-      git config --global http.sslVerify false && \
-      git clone --branch pcl-1.8.0 --depth 1 https://github.com/PointCloudLibrary/pcl.git pcl-trunk && \
-      cd pcl-trunk && \
-      mkdir build && cd build && \
-      cmake -DCMAKE_BUILD_TYPE=Release .. && \
-      make -j 1 && make install && \
-      make clean
+    git config --global http.sslVerify false && \
+    git clone --branch pcl-1.8.0 --depth 1 https://github.com/PointCloudLibrary/pcl.git pcl-trunk && \
+    cd pcl-trunk && \
+    mkdir build && cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release .. && \
+    make -j 1 && make install && \
+    make clean
