@@ -21,5 +21,7 @@ RUN \
     cd pcl-trunk && \
     mkdir build && cd build && \
     cmake -DCMAKE_BUILD_TYPE=Release .. && \
-    make -j 1 && make install && \
+    make -j 4 && make install && \
     make clean
+
+RUN ldconfig
