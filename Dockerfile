@@ -1,6 +1,6 @@
-FROM ubuntu:16.04
+FROM jupyter/minimal-notebook:latest
 
-MAINTAINER Kenji Nomura <atatb23@gmail.com>
+MAINTAINER Markus Matiaschek <mmatiaschek@gmail.com>
 
 ARG DEBIAN_FRONTEND=noninteractive
 
