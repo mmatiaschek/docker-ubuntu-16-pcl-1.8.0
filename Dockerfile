@@ -2,6 +2,8 @@ FROM jupyter/minimal-notebook:latest
 
 MAINTAINER Markus Matiaschek <mmatiaschek@gmail.com>
 
+USER root
+
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
@@ -25,3 +27,6 @@ RUN \
     make clean
 
 RUN ldconfig
+
+# Switch back to jovyan to avoid accidental container runs as root
+USER $NB_UID
